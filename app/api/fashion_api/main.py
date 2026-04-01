@@ -33,7 +33,10 @@ def create_app(settings: Settings | None = None, testing: bool = False) -> FastA
         else:
             settings = get_settings()
 
-    engine = create_db_engine(settings.database_url)
+    engine = create_db_engine(
+        settings.database_url,
+        use_static_pool=(settings.database_url == "sqlite:///:memory:"),
+    )
     session_factory = create_session_factory(engine)
 
     def get_db() -> Any:
@@ -41,6 +44,8 @@ def create_app(settings: Settings | None = None, testing: bool = False) -> FastA
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):  # type: ignore[misc]
+        # Ensure ORM models are imported so they're registered on Base before create_all
+        import fashion_api.db.models  # noqa: F401
         Base.metadata.create_all(bind=engine)
         upload_path = Path(settings.upload_dir)  # type: ignore[union-attr]
         upload_path.mkdir(parents=True, exist_ok=True)
@@ -65,6 +70,7 @@ def create_app(settings: Settings | None = None, testing: bool = False) -> FastA
 
     app.state.settings = settings
     app.state.get_db = get_db
+    app.state.engine = engine
 
     @app.get("/health", tags=["health"])
     def health() -> dict[str, str]:

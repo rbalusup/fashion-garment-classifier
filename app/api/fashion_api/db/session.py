@@ -4,17 +4,22 @@ from collections.abc import Generator
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
+from sqlalchemy.pool import StaticPool
 
 
 class Base(DeclarativeBase):
     pass
 
 
-def create_db_engine(database_url: str):  # type: ignore[no-untyped-def]
+def create_db_engine(database_url: str, use_static_pool: bool = False):  # type: ignore[no-untyped-def]
     connect_args = {}
+    kwargs: dict = {}
     if database_url.startswith("sqlite"):
         connect_args["check_same_thread"] = False
-    return create_engine(database_url, connect_args=connect_args)
+    if use_static_pool:
+        # Required for in-memory SQLite so all sessions share the same connection
+        kwargs["poolclass"] = StaticPool
+    return create_engine(database_url, connect_args=connect_args, **kwargs)
 
 
 def create_session_factory(engine):  # type: ignore[no-untyped-def]
