@@ -1,0 +1,1 @@
+"""Fashion Garment Classification API."""
