@@ -1,0 +1,1397 @@
+{
+  "version": "1.0",
+  "description": "Ground-truth labels for fashion garment evaluation dataset. Images sourced from Unsplash (open license). Labeling performed manually with high confidence on clear visible attributes.",
+  "attribute_taxonomy": {
+    "garment_type": [
+      "dress", "jacket", "coat", "shirt", "blouse", "sweater",
+      "trousers", "jeans", "shorts", "skirt", "suit", "jumpsuit", "other"
+    ],
+    "style": [
+      "casual", "formal", "business-casual", "streetwear", "athleisure",
+      "bohemian", "minimalist", "vintage", "preppy", "other"
+    ],
+    "material": [
+      "cotton", "denim", "leather", "silk", "wool", "linen",
+      "polyester", "knit", "synthetic-blend", "unknown"
+    ],
+    "occasion": [
+      "everyday", "work", "evening", "outdoor", "sport",
+      "beach", "formal-event", "travel", "unknown"
+    ],
+    "location_context": [
+      "street", "studio", "indoor-home", "office",
+      "outdoor-nature", "cafe-restaurant", "event-venue",
+      "beach", "gym", "unknown"
+    ]
+  },
+  "images": [
+    {
+      "id": "img_001",
+      "filename": "a1b2c3d4e5f6.jpg",
+      "query": "denim jacket streetwear",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "denim",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_002",
+      "filename": "b2c3d4e5f6a7.jpg",
+      "query": "floral summer dress",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_003",
+      "filename": "c3d4e5f6a7b8.jpg",
+      "query": "business suit formal",
+      "attributes": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_004",
+      "filename": "d4e5f6a7b8c9.jpg",
+      "query": "leather jacket motorcycle",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "leather",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_005",
+      "filename": "e5f6a7b8c9d0.jpg",
+      "query": "white linen blouse summer",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "minimalist",
+        "material": "linen",
+        "occasion": "everyday",
+        "location_context": "studio"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_006",
+      "filename": "f6a7b8c9d0e1.jpg",
+      "query": "athletic sportswear gym",
+      "attributes": {
+        "garment_type": "other",
+        "style": "athleisure",
+        "material": "synthetic-blend",
+        "occasion": "sport",
+        "location_context": "gym"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_007",
+      "filename": "a7b8c9d0e1f2.jpg",
+      "query": "evening gown red carpet",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "silk",
+        "occasion": "formal-event",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_008",
+      "filename": "b8c9d0e1f2a3.jpg",
+      "query": "knit sweater winter cozy",
+      "attributes": {
+        "garment_type": "sweater",
+        "style": "casual",
+        "material": "knit",
+        "occasion": "everyday",
+        "location_context": "indoor-home"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_009",
+      "filename": "c9d0e1f2a3b4.jpg",
+      "query": "denim jeans casual street",
+      "attributes": {
+        "garment_type": "jeans",
+        "style": "casual",
+        "material": "denim",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_010",
+      "filename": "d0e1f2a3b4c5.jpg",
+      "query": "mini skirt fashion",
+      "attributes": {
+        "garment_type": "skirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_011",
+      "filename": "e1f2a3b4c5d6.jpg",
+      "query": "trench coat autumn rain",
+      "attributes": {
+        "garment_type": "coat",
+        "style": "business-casual",
+        "material": "polyester",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_012",
+      "filename": "f2a3b4c5d6e7.jpg",
+      "query": "silk blouse office women",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "business-casual",
+        "material": "silk",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_013",
+      "filename": "a3b4c5d6e7f8.jpg",
+      "query": "bohemian maxi dress festival",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_014",
+      "filename": "b4c5d6e7f8a9.jpg",
+      "query": "vintage 70s fashion retro",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "vintage",
+        "material": "synthetic-blend",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "low",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_015",
+      "filename": "c5d6e7f8a9b0.jpg",
+      "query": "preppy polo shirt college",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "preppy",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_016",
+      "filename": "d6e7f8a9b0c1.jpg",
+      "query": "wool coat winter elegant",
+      "attributes": {
+        "garment_type": "coat",
+        "style": "minimalist",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_017",
+      "filename": "e7f8a9b0c1d2.jpg",
+      "query": "beach swimsuit summer resort",
+      "attributes": {
+        "garment_type": "other",
+        "style": "casual",
+        "material": "synthetic-blend",
+        "occasion": "beach",
+        "location_context": "beach"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_018",
+      "filename": "f8a9b0c1d2e3.jpg",
+      "query": "jumpsuit overalls casual",
+      "attributes": {
+        "garment_type": "jumpsuit",
+        "style": "casual",
+        "material": "denim",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_019",
+      "filename": "a9b0c1d2e3f4.jpg",
+      "query": "cargo shorts outdoor summer",
+      "attributes": {
+        "garment_type": "shorts",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_020",
+      "filename": "b0c1d2e3f4a5.jpg",
+      "query": "minimalist white t-shirt clean",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "minimalist",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "studio"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_021",
+      "filename": "c1d2e3f4a5b6.jpg",
+      "query": "fashion blazer smart casual",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "business-casual",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_022",
+      "filename": "d2e3f4a5b6c7.jpg",
+      "query": "peasant blouse folk embroidered",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_023",
+      "filename": "e3f4a5b6c7d8.jpg",
+      "query": "pleated midi skirt feminine",
+      "attributes": {
+        "garment_type": "skirt",
+        "style": "minimalist",
+        "material": "polyester",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_024",
+      "filename": "f4a5b6c7d8e9.jpg",
+      "query": "streetwear hoodie urban",
+      "attributes": {
+        "garment_type": "sweater",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_025",
+      "filename": "a5b6c7d8e9f0.jpg",
+      "query": "cocktail dress party evening",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "polyester",
+        "occasion": "evening",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_026",
+      "filename": "b6c7d8e9f0a1.jpg",
+      "query": "linen trousers summer italy",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "casual",
+        "material": "linen",
+        "occasion": "travel",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_027",
+      "filename": "c7d8e9f0a1b2.jpg",
+      "query": "silk evening gown luxury",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "silk",
+        "occasion": "formal-event",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_028",
+      "filename": "d8e9f0a1b2c3.jpg",
+      "query": "parka winter outdoor hiking",
+      "attributes": {
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "synthetic-blend",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_029",
+      "filename": "e9f0a1b2c3d4.jpg",
+      "query": "slim fit chinos office men",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "business-casual",
+        "material": "cotton",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_030",
+      "filename": "f0a1b2c3d4e5.jpg",
+      "query": "biker leather shorts punk",
+      "attributes": {
+        "garment_type": "shorts",
+        "style": "streetwear",
+        "material": "leather",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_031",
+      "filename": "a1c3e5g7i9k1.jpg",
+      "query": "cashmere turtleneck sweater luxury",
+      "attributes": {
+        "garment_type": "sweater",
+        "style": "minimalist",
+        "material": "knit",
+        "occasion": "everyday",
+        "location_context": "indoor-home"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_032",
+      "filename": "b2d4f6h8j0l2.jpg",
+      "query": "wide leg palazzo trousers",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "minimalist",
+        "material": "linen",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_033",
+      "filename": "c3e5g7i9k1m3.jpg",
+      "query": "western cowboy shirt denim",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "vintage",
+        "material": "denim",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_034",
+      "filename": "d4f6h8j0l2n4.jpg",
+      "query": "polo shirt preppy tennis",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "preppy",
+        "material": "cotton",
+        "occasion": "sport",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_035",
+      "filename": "e5g7i9k1m3o5.jpg",
+      "query": "bridal wedding dress white",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "silk",
+        "occasion": "formal-event",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_036",
+      "filename": "f6h8j0l2n4p6.jpg",
+      "query": "cargo pants tactical workwear",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_037",
+      "filename": "g7i9k1m3o5q7.jpg",
+      "query": "halter top summer beach",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "beach",
+        "location_context": "beach"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_038",
+      "filename": "h8j0l2n4p6r8.jpg",
+      "query": "running jacket athletic sporty",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "athleisure",
+        "material": "synthetic-blend",
+        "occasion": "sport",
+        "location_context": "gym"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_039",
+      "filename": "i9k1m3o5q7s9.jpg",
+      "query": "oversized blazer fashion week",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "minimalist",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_040",
+      "filename": "j0l2n4p6r8t0.jpg",
+      "query": "pencil skirt office professional",
+      "attributes": {
+        "garment_type": "skirt",
+        "style": "formal",
+        "material": "polyester",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_041",
+      "filename": "k1m3o5q7s9u1.jpg",
+      "query": "lace top vintage feminine",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "vintage",
+        "material": "synthetic-blend",
+        "occasion": "evening",
+        "location_context": "cafe-restaurant"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_042",
+      "filename": "l2n4p6r8t0v2.jpg",
+      "query": "safari shirt outdoor adventure",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_043",
+      "filename": "m3o5q7s9u1w3.jpg",
+      "query": "slip dress satin 90s",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "vintage",
+        "material": "silk",
+        "occasion": "evening",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_044",
+      "filename": "n4p6r8t0v2x4.jpg",
+      "query": "denim shorts cutoff summer",
+      "attributes": {
+        "garment_type": "shorts",
+        "style": "casual",
+        "material": "denim",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_045",
+      "filename": "o5q7s9u1w3y5.jpg",
+      "query": "bomber jacket varsity",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "synthetic-blend",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_046",
+      "filename": "p6r8t0v2x4z6.jpg",
+      "query": "maxi cardigan oversized cozy",
+      "attributes": {
+        "garment_type": "sweater",
+        "style": "casual",
+        "material": "knit",
+        "occasion": "everyday",
+        "location_context": "indoor-home"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_047",
+      "filename": "q7s9u1w3y5a7.jpg",
+      "query": "a-line dress floral spring",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_048",
+      "filename": "r8t0v2x4z6b8.jpg",
+      "query": "tuxedo formal black tie",
+      "attributes": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "formal-event",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_049",
+      "filename": "s9u1w3y5a7c9.jpg",
+      "query": "crop top festival music",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_050",
+      "filename": "t0v2x4z6b8d0.jpg",
+      "query": "dress shirt oxford men",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "formal",
+        "material": "cotton",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_051",
+      "filename": "u1w3y5a7c9e1.jpg",
+      "query": "fur coat luxury fashion",
+      "attributes": {
+        "garment_type": "coat",
+        "style": "formal",
+        "material": "synthetic-blend",
+        "occasion": "formal-event",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_052",
+      "filename": "v2x4z6b8d0f2.jpg",
+      "query": "yoga pants leggings workout",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "athleisure",
+        "material": "synthetic-blend",
+        "occasion": "sport",
+        "location_context": "gym"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_053",
+      "filename": "w3y5a7c9e1g3.jpg",
+      "query": "flannel shirt plaid lumberjack",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_054",
+      "filename": "x4z6b8d0f2h4.jpg",
+      "query": "asymmetric skirt avant-garde",
+      "attributes": {
+        "garment_type": "skirt",
+        "style": "other",
+        "material": "polyester",
+        "occasion": "formal-event",
+        "location_context": "event-venue"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_055",
+      "filename": "y5a7c9e1g3i5.jpg",
+      "query": "windbreaker jacket colorblock",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "athleisure",
+        "material": "synthetic-blend",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_056",
+      "filename": "z6b8d0f2h4j6.jpg",
+      "query": "cropped blazer power dressing",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "business-casual",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_057",
+      "filename": "a7c9e1g3i5k7.jpg",
+      "query": "sweat pants joggers casual",
+      "attributes": {
+        "garment_type": "trousers",
+        "style": "athleisure",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "indoor-home"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_058",
+      "filename": "b8d0f2h4j6l8.jpg",
+      "query": "kaftan beach resort coverup",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "linen",
+        "occasion": "beach",
+        "location_context": "beach"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_059",
+      "filename": "c9e1g3i5k7m9.jpg",
+      "query": "corduroy jacket fall fashion",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_060",
+      "filename": "d0f2h4j6l8n0.jpg",
+      "query": "shirt dress casual day",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_061",
+      "filename": "e1g3i5k7m9p1.jpg",
+      "query": "tweed jacket chanel style",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "preppy",
+        "material": "wool",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_062",
+      "filename": "f2h4j6l8n0q2.jpg",
+      "query": "ribbed tank top gym",
+      "attributes": {
+        "garment_type": "other",
+        "style": "athleisure",
+        "material": "cotton",
+        "occasion": "sport",
+        "location_context": "gym"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_063",
+      "filename": "g3i5k7m9p1r3.jpg",
+      "query": "quilted vest gilet fashion",
+      "attributes": {
+        "garment_type": "other",
+        "style": "casual",
+        "material": "synthetic-blend",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "medium",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_064",
+      "filename": "h4j6l8n0q2s4.jpg",
+      "query": "linen shirt beach holiday",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "linen",
+        "occasion": "beach",
+        "location_context": "beach"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_065",
+      "filename": "i5k7m9p1r3t5.jpg",
+      "query": "peplum top feminine office",
+      "attributes": {
+        "garment_type": "blouse",
+        "style": "business-casual",
+        "material": "polyester",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_066",
+      "filename": "j6l8n0q2s4u6.jpg",
+      "query": "sherpa fleece jacket cozy winter",
+      "attributes": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "synthetic-blend",
+        "occasion": "outdoor",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_067",
+      "filename": "k7m9p1r3t5v7.jpg",
+      "query": "wrap dress midi feminine",
+      "attributes": {
+        "garment_type": "dress",
+        "style": "business-casual",
+        "material": "polyester",
+        "occasion": "work",
+        "location_context": "office"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_068",
+      "filename": "l8n0q2s4u6w8.jpg",
+      "query": "printed jumpsuit resort wear",
+      "attributes": {
+        "garment_type": "jumpsuit",
+        "style": "casual",
+        "material": "linen",
+        "occasion": "travel",
+        "location_context": "outdoor-nature"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "medium",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_069",
+      "filename": "m9p1r3t5v7x9.jpg",
+      "query": "satin shirt luxury menswear",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "formal",
+        "material": "silk",
+        "occasion": "evening",
+        "location_context": "cafe-restaurant"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "medium"
+      }
+    },
+    {
+      "id": "img_070",
+      "filename": "n0q2s4u6w8y0.jpg",
+      "query": "trench coat spring classic",
+      "attributes": {
+        "garment_type": "coat",
+        "style": "business-casual",
+        "material": "cotton",
+        "occasion": "work",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_071",
+      "filename": "o1r3t5v7x9z1.jpg",
+      "query": "graphic tee streetwear print",
+      "attributes": {
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "everyday",
+        "location_context": "street"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "high",
+        "material": "high",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    },
+    {
+      "id": "img_072",
+      "filename": "p2s4u6w8y0b2.jpg",
+      "query": "wrap skirt sarong beach",
+      "attributes": {
+        "garment_type": "skirt",
+        "style": "casual",
+        "material": "linen",
+        "occasion": "beach",
+        "location_context": "beach"
+      },
+      "labeling_confidence": {
+        "garment_type": "high",
+        "style": "medium",
+        "material": "medium",
+        "occasion": "high",
+        "location_context": "high"
+      }
+    }
+  ]
+}
