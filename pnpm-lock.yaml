@@ -12,6 +12,8 @@ importers:
         specifier: ^2.3.0
         version: 2.9.3
 
+  app/api: {}
+
   app/web:
     dependencies:
       react:

@@ -1,6 +1,13 @@
 """Application configuration loaded from environment variables."""
 
+from pathlib import Path
+
 from pydantic_settings import BaseSettings
+
+# Repo root .env (two levels up from fashion_api/)
+_ROOT_ENV = Path(__file__).parent.parent.parent.parent / ".env"
+# Local override inside app/api/ (optional, takes precedence)
+_LOCAL_ENV = Path(__file__).parent.parent / ".env"
 
 
 class Settings(BaseSettings):
@@ -19,7 +26,11 @@ class Settings(BaseSettings):
     fashion_log_level: str = "INFO"
     fashion_debug: bool = False
 
-    model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "case_sensitive": False}
+    model_config = {
+        "env_file": [str(_ROOT_ENV), str(_LOCAL_ENV)],
+        "env_file_encoding": "utf-8",
+        "case_sensitive": False,
+    }
 
     @property
     def claude_model(self) -> str:

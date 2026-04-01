@@ -3,7 +3,8 @@
 from datetime import datetime
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
+from pydantic.alias_generators import to_camel
 
 
 class ParseError(Exception):
@@ -109,7 +110,7 @@ class AnnotationOut(BaseModel):
     notes: str | None
     source: str
 
-    model_config = {"from_attributes": True}
+    model_config = ConfigDict(from_attributes=True, alias_generator=to_camel, populate_by_name=True)
 
 
 class GarmentUpdate(BaseModel):
@@ -127,7 +128,7 @@ class GarmentListItem(BaseModel):
     color_palette: list[str]
     classification_error: str | None
 
-    model_config = {"from_attributes": True}
+    model_config = ConfigDict(from_attributes=True, alias_generator=to_camel, populate_by_name=True)
 
 
 class GarmentOut(BaseModel):
@@ -156,7 +157,7 @@ class GarmentOut(BaseModel):
     classification_error: str | None
     annotations: list[AnnotationOut]
 
-    model_config = {"from_attributes": True}
+    model_config = ConfigDict(from_attributes=True, alias_generator=to_camel, populate_by_name=True)
 
 
 class PaginatedGarments(BaseModel):
@@ -179,3 +180,5 @@ class FilterOptions(BaseModel):
     location_city: list[str]
     designer: list[str]
     year: list[int]
+
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)

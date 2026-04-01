@@ -21,16 +21,16 @@ const FILTER_GROUPS: { key: keyof SearchParams; label: string }[] = [
 ]
 
 const FILTER_OPTIONS_MAP: Record<string, keyof import('@/types/garment').FilterOptions> = {
-  garment_type: 'garment_type',
+  garment_type: 'garmentType',
   style: 'style',
   material: 'material',
   color: 'color',
   pattern: 'pattern',
   season: 'season',
   occasion: 'occasion',
-  continent: 'location_continent',
-  country: 'location_country',
-  city: 'location_city',
+  continent: 'locationContinent',
+  country: 'locationCountry',
+  city: 'locationCity',
   designer: 'designer',
 }
 

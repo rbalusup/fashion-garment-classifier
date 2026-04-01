@@ -59,16 +59,16 @@ export interface PaginatedGarments {
 }
 
 export interface FilterOptions {
-  garment_type: string[]
+  garmentType: string[]
   style: string[]
   material: string[]
   color: string[]
   pattern: string[]
   season: string[]
   occasion: string[]
-  location_continent: string[]
-  location_country: string[]
-  location_city: string[]
+  locationContinent: string[]
+  locationCountry: string[]
+  locationCity: string[]
   designer: string[]
   year: number[]
 }
