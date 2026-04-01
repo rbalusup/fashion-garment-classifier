@@ -38,6 +38,7 @@ eval/images/*
 !eval/images/.gitkeep
 eval/reports/*
 !eval/reports/.gitkeep
+!eval/reports/baseline_report.md
 
 # IDE
 .idea/
