@@ -206,7 +206,7 @@ All variables use the `FASHION_` prefix (set in `.env`):
 
 ---
 
-## POC Evaluation
+## Evaluation
 
 This section addresses the five key dimensions for evaluating this proof of concept.
 
@@ -286,3 +286,18 @@ Known limitations documented here and in `eval/analysis.md`:
 - **SQLite concurrency**: single-writer DB; unsuitable for concurrent multi-user access
 - **No auth**: single-user POC; would need authentication before multi-tenant deployment
 - **Evaluation sample**: 50 images is sufficient for a POC but too small for production model selection decisions
+
+---
+
+## Project images
+
+![Project setup in VSCode](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/project-in-vscode.png)
+
+![Application Main Page](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/application-page-1.png)
+![Application Detail Page](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/application-page-2.png)
+
+![Evaluation Test Run CLI1](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/eval-1.png)
+![Evaluation Test Run CLI2](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/eval-2.png)
+
+![Evaluation Report Run CLI1](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/eval-report-1.png)
+![Evaluation Report Run CLI2](https://github.com/rbalusup/fashion-garment-classifier/blob/master/docs/images/eval-report-2.png)
