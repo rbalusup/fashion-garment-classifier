@@ -8,35 +8,44 @@ This document describes how the Fashion Garment Classifier is evaluated against 
 
 ### Source
 
-Images are sourced from **Unsplash** via the `source.unsplash.com` endpoint — open license, no API key required, programmatic access. Each image is requested at `800×1000px` with a fashion-specific query string (e.g. `denim jacket streetwear`, `floral summer dress`).
+Images are sourced from **Pexels** ([pexels.com/search/fashion](https://www.pexels.com/search/fashion/)) — free to use under the Pexels license, no API key required for direct CDN access. Each image is downloaded at `800px` wide via its direct CDN URL:
+
+```
+https://images.pexels.com/photos/{id}/pexels-photo-{id}.jpeg?auto=compress&cs=tinysrgb&w=800
+```
+
+Unlike query-based image search (which returns different images each time), Pexels CDN URLs are deterministic: the same URL always yields the same image. This makes the evaluation reproducible across runs.
 
 ### Size
 
-72 labeled images covering:
+50 labeled images covering:
 
 | Dimension | Coverage |
 |-----------|----------|
-| Garment types | all 13 taxonomy values |
-| Styles | all 10 taxonomy values |
-| Materials | 9 of 10 taxonomy values |
-| Occasions | all 9 taxonomy values |
-| Location contexts | all 10 taxonomy values |
+| Garment types | 11 of 13 taxonomy values |
+| Styles | 8 of 10 taxonomy values |
+| Materials | 6 of 10 taxonomy values |
+| Occasions | 7 of 9 taxonomy values |
+| Location contexts | 5 of 6 (all continents present) |
 
 ### Storage
 
-Images are stored as `eval/images/<filename>.jpg` (gitignored). The download phase is idempotent — existing files are skipped. Filenames are pseudo-random hex strings to avoid query-string leakage into model prompts.
+Images are downloaded to `eval/images/pexels-{id}.jpg` (gitignored). The download phase is idempotent — existing files are skipped. The Pexels ID is preserved in the filename for traceability.
 
 ### Labeling
 
-Labels are in `eval/labels.json`. Each image record includes:
+Labels are in `eval/labels.json` (version 1.1). Each image record includes:
 
-- `id` — sequential identifier (`img_001` … `img_072`)
-- `filename` — local filename
-- `query` — Unsplash search query used to fetch the image (for human review)
+- `id` — sequential identifier (`img_001` … `img_050`)
+- `filename` — local filename (`pexels-{id}.jpg`)
+- `pexels_id` — numeric Pexels photo ID
+- `source_url` — full CDN URL for deterministic download
 - `attributes` — ground-truth values for all 5 evaluated attributes
-- `labeling_confidence` — `high`, `medium`, or `low` per attribute, set during manual review
+- `labeling_confidence` — `high`, `medium`, or `low` per attribute
 
-Labeling was performed manually. Confidence is based on:
+**Labeling process:** All 50 images were visually inspected and labeled by a human reviewer. Thumbnails (200px) were examined per image; labels reflect what is clearly visible in the photograph. The `labeling_confidence` field captures uncertainty.
+
+Confidence is based on:
 - **high** — attribute is unambiguous and clearly visible
 - **medium** — attribute is likely but could be interpreted differently
 - **low** — attribute is a best guess with meaningful uncertainty
@@ -51,7 +60,7 @@ Five attributes are evaluated:
 2. **style** — aesthetic style (casual, formal, business-casual, streetwear, athleisure, bohemian, minimalist, vintage, preppy, other)
 3. **material** — primary fabric/material (cotton, denim, leather, silk, wool, linen, polyester, knit, synthetic-blend, unknown)
 4. **occasion** — intended use context (everyday, work, evening, outdoor, sport, beach, formal-event, travel, unknown)
-5. **location_context** — photo environment (street, studio, indoor-home, office, outdoor-nature, cafe-restaurant, event-venue, beach, gym, unknown)
+5. **location_context** — geographic design tradition of the garment (`europe`, `asia`, `americas`, `africa`, `oceania`, `unknown`). This maps to what Claude's `location_context.continent` field returns (the inferred cultural/geographic origin of the design), not the literal photo background/setting.
 
 ---
 

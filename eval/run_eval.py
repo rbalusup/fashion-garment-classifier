@@ -79,7 +79,7 @@ def download_images(labels: dict, timeout: int = 20) -> None:
             continue
 
         query = img.get("query", "fashion garment")
-        url = f"{UNSPLASH_BASE}?{query.replace(' ', ',')}"
+        url = img.get("source_url") or f"{UNSPLASH_BASE}?{query.replace(' ', ',')}"
         print(f"  → {img['id']}  {url}")
         try:
             resp = httpx.get(url, timeout=timeout, follow_redirects=True)
