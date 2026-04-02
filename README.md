@@ -284,8 +284,10 @@ Known limitations documented here and in `eval/analysis.md`:
 - **Style is subjective**: ground truth was labeled by a single reviewer; inter-rater agreement would likely be 60–70%
 - **`location_context` is noisy**: geographic design tradition is subtle and increasingly irrelevant as fashion globalizes
 - **SQLite concurrency**: single-writer DB; unsuitable for concurrent multi-user access
-- **No auth**: single-user POC; would need authentication before multi-tenant deployment
-- **Evaluation sample**: 50 images is sufficient for a POC but too small for production model selection decisions
+- **No auth**: single-user; would need authentication before multi-tenant deployment
+- **Evaluation sample**: I have considered 50 images are sufficient for this POC but too small for production model selection decisions
+
+- **Not used dataset for images**: TODO: I have scraped the garment specific images from[pexels.com/search/fashion](https://www.pexels.com/search/fashion/) for this work. We could improve this project by getting the fashion related images from [Kaggle](https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset) or [HuggingFace](https://huggingface.co/datasets/ashraq/fashion-product-images-small) wherein ground truth comes from real dataset, then we can build the dataset, load, and map the images to the labels and generate a jsom file out of it to run the evals.
 
 ---
 
