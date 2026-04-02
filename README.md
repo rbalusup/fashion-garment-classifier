@@ -6,7 +6,7 @@ AI-powered fashion inspiration library. Upload garment photos, get automatic AI 
 
 ## Features
 
-- **AI classification** — Claude `claude-3-5-sonnet-20241022` multimodal vision extracts garment type, style, material, color palette, pattern, season, occasion, consumer profile, trend notes, and location context
+- **AI classification** — Claude `claude-sonnet-4-6` multimodal vision extracts garment type, style, material, color palette, pattern, season, occasion, consumer profile, trend notes, and location context
 - **Visual library** — responsive 5-column grid with thumbnail preview and color chips
 - **Dynamic filters** — filter by garment type, style, material, pattern, season, occasion, continent/country/city, year
 - **Full-text search** — searches description, trend notes, consumer profile, and annotation notes
@@ -63,18 +63,18 @@ fashion-garment-classifier/          ← monorepo root (Turborepo + pnpm)
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Monorepo | Turborepo + pnpm workspaces |
-| Frontend | React 18, TypeScript, Vite, Tailwind CSS v3 |
-| Backend | Python 3.12, FastAPI, Uvicorn |
-| Python packages | uv |
-| Database | SQLite via SQLAlchemy 2.0 |
-| AI | `claude-3-5-sonnet-20241022` (multimodal vision) |
-| Config | pydantic-settings (`FASHION_` env prefix) |
-| Retries | tenacity (3 attempts, exp backoff 2–10s) |
-| Logging | structlog |
-| API tests | pytest, pytest-asyncio, httpx AsyncClient |
+| Layer           | Technology                                  |
+| --------------- | ------------------------------------------- |
+| Monorepo        | Turborepo + pnpm workspaces                 |
+| Frontend        | React 18, TypeScript, Vite, Tailwind CSS v3 |
+| Backend         | Python 3.12, FastAPI, Uvicorn               |
+| Python packages | uv                                          |
+| Database        | SQLite via SQLAlchemy 2.0                   |
+| AI              | `claude-sonnet-4-6` (multimodal vision)     |
+| Config          | pydantic-settings (`FASHION_` env prefix)   |
+| Retries         | tenacity (3 attempts, exp backoff 2–10s)    |
+| Logging         | structlog                                   |
+| API tests       | pytest, pytest-asyncio, httpx AsyncClient   |
 
 ---
 
@@ -162,20 +162,20 @@ See `docs/EVAL_METHODOLOGY.md` for full methodology details.
 
 ## API Reference
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `POST` | `/api/upload` | Multipart upload → classify → return GarmentRecord |
-| `GET` | `/api/garments` | Paginated list with full-text search and all filters |
-| `GET` | `/api/garments/{id}` | Full detail including annotations |
-| `PATCH` | `/api/garments/{id}` | Update designer/year/month fields |
-| `DELETE` | `/api/garments/{id}` | Delete record + image file |
-| `POST` | `/api/garments/{id}/reclassify` | Re-run Claude on existing image |
-| `POST` | `/api/annotations` | Create annotation |
-| `GET` | `/api/annotations/{garment_id}` | List annotations for garment |
-| `PATCH` | `/api/annotations/{annotation_id}` | Edit annotation |
-| `DELETE` | `/api/annotations/{annotation_id}` | Delete annotation |
-| `GET` | `/api/filters/options` | Distinct values per filterable field |
-| `GET` | `/uploads/{filename}` | Serve uploaded image files |
+| Method   | Path                               | Description                                          |
+| -------- | ---------------------------------- | ---------------------------------------------------- |
+| `POST`   | `/api/upload`                      | Multipart upload → classify → return GarmentRecord   |
+| `GET`    | `/api/garments`                    | Paginated list with full-text search and all filters |
+| `GET`    | `/api/garments/{id}`               | Full detail including annotations                    |
+| `PATCH`  | `/api/garments/{id}`               | Update designer/year/month fields                    |
+| `DELETE` | `/api/garments/{id}`               | Delete record + image file                           |
+| `POST`   | `/api/garments/{id}/reclassify`    | Re-run Claude on existing image                      |
+| `POST`   | `/api/annotations`                 | Create annotation                                    |
+| `GET`    | `/api/annotations/{garment_id}`    | List annotations for garment                         |
+| `PATCH`  | `/api/annotations/{annotation_id}` | Edit annotation                                      |
+| `DELETE` | `/api/annotations/{annotation_id}` | Delete annotation                                    |
+| `GET`    | `/api/filters/options`             | Distinct values per filterable field                 |
+| `GET`    | `/uploads/{filename}`              | Serve uploaded image files                           |
 
 **Query params for `GET /api/garments`:** `q` (full-text), `garment_type`, `style`, `material`, `pattern`, `season`, `occasion`, `continent`, `country`, `city`, `year`, `month`, `page`, `page_size`.
 
@@ -185,15 +185,15 @@ See `docs/EVAL_METHODOLOGY.md` for full methodology details.
 
 All variables use the `FASHION_` prefix (set in `.env`):
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `ANTHROPIC_API_KEY` | — | Required. Anthropic API key |
-| `FASHION_CLAUDE_MODEL` | `claude-3-5-sonnet-20241022` | Claude model for classification |
-| `FASHION_DATABASE_URL` | `sqlite:///./fashion.db` | SQLAlchemy DB URL |
-| `FASHION_UPLOAD_DIR` | `uploads` | Directory for uploaded images |
-| `FASHION_MAX_UPLOAD_MB` | `10` | Max upload file size |
-| `FASHION_LOG_LEVEL` | `INFO` | structlog log level |
-| `FASHION_DEBUG` | `false` | FastAPI debug mode |
+| Variable                | Default                  | Description                     |
+| ----------------------- | ------------------------ | ------------------------------- |
+| `ANTHROPIC_API_KEY`     | —                        | Required. Anthropic API key     |
+| `FASHION_CLAUDE_MODEL`  | `claude-sonnet-4-6`      | Claude model for classification |
+| `FASHION_DATABASE_URL`  | `sqlite:///./fashion.db` | SQLAlchemy DB URL               |
+| `FASHION_UPLOAD_DIR`    | `uploads`                | Directory for uploaded images   |
+| `FASHION_MAX_UPLOAD_MB` | `10`                     | Max upload file size            |
+| `FASHION_LOG_LEVEL`     | `INFO`                   | structlog log level             |
+| `FASHION_DEBUG`         | `false`                  | FastAPI debug mode              |
 
 ---
 
@@ -213,6 +213,7 @@ This section addresses the five key dimensions for evaluating this proof of conc
 ### 1. Functionality — Does the core workflow work end to end?
 
 Yes. The full pipeline is operational:
+
 - Upload a JPEG/PNG → stored in `uploads/`, classified by Claude vision, persisted to SQLite
 - Browse the visual library with real-time search and multi-attribute filters
 - Filter by garment type, style, material, season, pattern, occasion, continent/country/city, year/month
@@ -220,6 +221,7 @@ Yes. The full pipeline is operational:
 - Reclassify an existing image to refresh Claude attributes
 
 Known limitations of this POC:
+
 - SQLite is single-writer; a production deployment would use PostgreSQL
 - Images stored on local filesystem; production would use S3
 - No user authentication; the system is a single-user personal library
@@ -230,13 +232,13 @@ Known limitations of this POC:
 
 **Expected per-attribute accuracy** (run `eval/run_eval.py --run --report` to get live numbers):
 
-| Attribute | Expected Exact | Notes |
-|-----------|---------------:|-------|
-| `garment_type` | 80–90% | Most reliable; clear silhouette signal |
-| `occasion` | 60–75% | Context-dependent; fuzzy scoring (+0.5 for adjacent) helps |
-| `style` | 55–70% | Subjective; single-reviewer ground truth |
-| `material` | 40–60% | Hardest; fabric texture is often ambiguous in photos |
-| `location_context` | 45–65% | Inferred geographic design tradition; global fashion makes this noisy |
+| Attribute          | Expected Exact | Notes                                                                 |
+| ------------------ | -------------: | --------------------------------------------------------------------- |
+| `garment_type`     |         80–90% | Most reliable; clear silhouette signal                                |
+| `occasion`         |         60–75% | Context-dependent; fuzzy scoring (+0.5 for adjacent) helps            |
+| `style`            |         55–70% | Subjective; single-reviewer ground truth                              |
+| `material`         |         40–60% | Hardest; fabric texture is often ambiguous in photos                  |
+| `location_context` |         45–65% | Inferred geographic design tradition; global fashion makes this noisy |
 
 **Key finding:** Claude excels at structural/categorical attributes (`garment_type`) and struggles with visually ambiguous or subjective ones (`material`, `style`). See `eval/analysis.md` for full analysis.
 
@@ -253,6 +255,7 @@ uv run python ../../eval/run_eval.py --report     # print Markdown accuracy tabl
 **Structure:** Clean separation — `garment/` (domain logic), `db/` (ORM), `core/` (config/logging/retry). Each agent concept has its own `models.py`, `router.py`, and `parser.py`.
 
 **Test pyramid:**
+
 - **12 unit tests** (`tests/unit/test_parser.py`): `parse_garment_attributes()` is a pure function — no DB, no API. Tests cover clean JSON, markdown fences, embedded JSON, missing fields, unknown values, malformed input.
 - **17 integration tests** (`tests/integration/test_filters.py`): In-memory SQLite seeded with 12 garments; tests verify location hierarchy filters and time filters work correctly.
 - **7 E2E tests** (`tests/e2e/test_upload_classify_filter.py`): Full ASGI round-trip via `httpx.AsyncClient`; Anthropic is mocked. Tests verify upload → classify → filter flow end-to-end.
@@ -263,19 +266,20 @@ uv run python ../../eval/run_eval.py --report     # print Markdown accuracy tabl
 
 ### 4. Product Thinking — Sensible trade-offs for a POC?
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Database | SQLite | Zero infrastructure for a personal library POC |
-| Storage | Local filesystem | No S3 credentials needed; upgrade path is clear |
-| Image source for eval | Pexels CDN URLs | Deterministic, no API key, open license |
-| LLM output | Strict JSON prompt | Simpler than function calling; works with all Claude versions |
-| Test isolation | `create_app(testing=True)` + `StaticPool` | In-memory DB per test run; no teardown needed |
-| Monorepo | Turborepo + pnpm | Unified `pnpm dev` starts API + web; one lockfile |
-| UI differentiation | Blue (AI) / Amber (designer) | Clear provenance signal; prevents confusion about data origin |
+| Decision              | Choice                                    | Rationale                                                     |
+| --------------------- | ----------------------------------------- | ------------------------------------------------------------- |
+| Database              | SQLite                                    | Zero infrastructure for a personal library POC                |
+| Storage               | Local filesystem                          | No S3 credentials needed; upgrade path is clear               |
+| Image source for eval | Pexels CDN URLs                           | Deterministic, no API key, open license                       |
+| LLM output            | Strict JSON prompt                        | Simpler than function calling; works with all Claude versions |
+| Test isolation        | `create_app(testing=True)` + `StaticPool` | In-memory DB per test run; no teardown needed                 |
+| Monorepo              | Turborepo + pnpm                          | Unified `pnpm dev` starts API + web; one lockfile             |
+| UI differentiation    | Blue (AI) / Amber (designer)              | Clear provenance signal; prevents confusion about data origin |
 
 ### 5. Communication — Is the README clear and honest about limitations?
 
 Known limitations documented here and in `eval/analysis.md`:
+
 - **Material classification is unreliable** (~40–60% accuracy): fabric texture is often indistinguishable in photos — even for human annotators
 - **Style is subjective**: ground truth was labeled by a single reviewer; inter-rater agreement would likely be 60–70%
 - **`location_context` is noisy**: geographic design tradition is subtle and increasingly irrelevant as fashion globalizes

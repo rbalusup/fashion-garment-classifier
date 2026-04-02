@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import sys
 import time
 from collections import defaultdict
@@ -26,6 +27,15 @@ REPORTS_DIR = EVAL_DIR / "reports"
 LABELS_FILE = EVAL_DIR / "labels.json"
 SYNONYM_FILE = EVAL_DIR / "synonym_map.json"
 RESULTS_FILE = REPORTS_DIR / "eval_results.json"
+
+# Load .env from repo root so ANTHROPIC_API_KEY is available without shell export
+_env_file = EVAL_DIR.parent / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text().splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _, _v = _line.partition("=")
+            os.environ.setdefault(_k.strip(), _v.strip())
 
 UNSPLASH_BASE = "https://source.unsplash.com/800x1000/"
 ATTRIBUTES = ["garment_type", "style", "material", "occasion", "location_context"]
@@ -107,13 +117,15 @@ def download_images(labels: dict, timeout: int = 20) -> None:
 def run_classification(labels: dict, synonyms: dict) -> list[dict]:
     """Classify each image with the real GarmentClassifier and save results."""
     # Import here so the script can be imported/used without API key for --report
-    import os
     sys.path.insert(0, str(EVAL_DIR.parent / "app" / "api"))
 
     from fashion_api.garment.classifier import GarmentClassifier
     from fashion_api.garment.models import ParseError
 
-    classifier = GarmentClassifier(api_key=os.environ["ANTHROPIC_API_KEY"])
+    classifier = GarmentClassifier(
+        api_key=os.environ["ANTHROPIC_API_KEY"],
+        model=os.environ.get("FASHION_CLAUDE_MODEL", "claude-sonnet-4-6"),
+    )
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     images = labels["images"]

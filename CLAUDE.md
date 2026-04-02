@@ -71,7 +71,7 @@ tests/
 | Variable | Default | Description |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | required | Anthropic API key |
-| `FASHION_CLAUDE_MODEL` | `claude-3-5-sonnet-20241022` | Vision model |
+| `FASHION_CLAUDE_MODEL` | `claude-sonnet-4-6` | Vision model |
 | `FASHION_DATABASE_URL` | `sqlite:///./fashion.db` | SQLAlchemy URL |
 | `FASHION_UPLOAD_DIR` | `uploads` | Image storage dir |
 | `FASHION_MAX_UPLOAD_MB` | `10` | Max file size |
