@@ -38,7 +38,7 @@ class TestUploadClassifyFilter:
         )
         assert resp.status_code == 201
         body = resp.json()
-        assert body["garment_type"] == MOCK_CLASSIFICATION["garment_type"]
+        assert body["garmentType"] == MOCK_CLASSIFICATION["garment_type"]
         assert body["style"] == MOCK_CLASSIFICATION["style"]
         assert "id" in body
 
@@ -51,9 +51,9 @@ class TestUploadClassifyFilter:
         assert get_resp.status_code == 200
         data = get_resp.json()
         # User-supplied location takes precedence
-        assert data["location_continent"] == "americas"
-        assert data["location_country"] == "usa"
-        assert data["location_city"] == "new york"
+        assert data["locationContinent"] == "americas"
+        assert data["locationCountry"] == "usa"
+        assert data["locationCity"] == "new york"
 
     # 3. Continent filter returns only matching item
     async def test_filter_by_continent_returns_matching_item(self, client: AsyncClient) -> None:
@@ -82,7 +82,7 @@ class TestUploadClassifyFilter:
     # 5. Full smoke test: upload → classify → filter by continent+country → item in results
     async def test_full_upload_classify_filter_flow(self, client: AsyncClient) -> None:
         body = await upload(client, continent="africa", country="morocco", city="marrakech")
-        assert body["garment_type"] == "jacket"  # from mock
+        assert body["garmentType"] == "jacket"  # from mock
 
         resp = await client.get("/api/garments?continent=africa&country=morocco")
         assert resp.status_code == 200
