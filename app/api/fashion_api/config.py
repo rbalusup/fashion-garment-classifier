@@ -13,7 +13,7 @@ _LOCAL_ENV = Path(__file__).parent.parent / ".env"
 class Settings(BaseSettings):
     # Anthropic
     anthropic_api_key: str
-    fashion_claude_model: str = "claude-3-5-sonnet-20241022"
+    fashion_claude_model: str = "claude-sonnet-4-6"
 
     # Database
     fashion_database_url: str = "sqlite:///./fashion.db"

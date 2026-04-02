@@ -52,7 +52,7 @@ def _detect_media_type(image_path: Path) -> str:
 class GarmentClassifier:
     """Classifies a garment image using Claude's multimodal vision API."""
 
-    def __init__(self, api_key: str, model: str = "claude-3-5-sonnet-20241022") -> None:
+    def __init__(self, api_key: str, model: str = "claude-sonnet-4-6") -> None:
         self._client = Anthropic(api_key=api_key)
         self._model = model
 
